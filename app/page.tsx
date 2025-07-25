@@ -216,19 +216,19 @@ export default function HomePage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">₹2.4Cr</div>
-                      <div className="text-xs text-gray-600 font-medium">Monthly Premium</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">₹2400Cr</div>
+                      <div className="text-xs text-gray-600 font-medium">Annual Premium</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">15,234</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">3,500,000</div>
                       <div className="text-xs text-gray-600 font-medium">Active Policies</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">47</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">50+</div>
                       <div className="text-xs text-gray-600 font-medium">Partner Insurers</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">94%</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">98%</div>
                       <div className="text-xs text-gray-600 font-medium">Customer Satisfaction</div>
                     </div>
                   </div>
