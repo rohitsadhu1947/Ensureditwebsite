@@ -160,12 +160,12 @@ export default function EmbeddedInsurancePage() {
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
-              <a
-                href="#demo"
+              <Link
+                href="/demo"
                 className="text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg font-medium transition-colors"
               >
                 View Demo
-              </a>
+              </Link>
               <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                 Get Started
               </Button>
@@ -200,9 +200,9 @@ export default function EmbeddedInsurancePage() {
                   Contact
                 </Link>
                 <div className="pt-4 space-y-2">
-                  <a href="#demo" className="block text-blue-600 py-2 font-medium">
+                  <Link href="/demo" className="block text-blue-600 py-2 font-medium">
                     View Demo
-                  </a>
+                  </Link>
                   <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
                 </div>
               </nav>
