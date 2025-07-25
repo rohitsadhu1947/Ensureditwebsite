@@ -295,13 +295,15 @@ export default function StrategicAnalyticsPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-white text-purple-600 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
-                >
-                  <span className="mr-2">▶</span>
-                  Watch Demo
-                </Button>
+                <Link href="/demo">
+                  <Button
+                    size="lg"
+                    className="bg-white text-purple-600 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
+                  >
+                    <span className="mr-2">▶</span>
+                    Watch Demo
+                  </Button>
+                </Link>
                 <Button
                   size="lg"
                   variant="outline"
@@ -539,12 +541,14 @@ export default function StrategicAnalyticsPage() {
             Join leading companies using Strategic Analytics to make data-driven decisions and drive business growth
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
-            >
-              Schedule Demo
-            </Button>
+            <Link href="/demo">
+              <Button
+                size="lg"
+                className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
+              >
+                Schedule Demo
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"

@@ -403,13 +403,15 @@ export default function AboutPage() {
             >
               View Open Positions
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
-            >
-              Partner With Us
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
+              >
+                Partner With Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
