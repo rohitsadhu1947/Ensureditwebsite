@@ -70,28 +70,28 @@ export default function AboutPage() {
         "Launched Ensuredit with core insurance distribution platform, onboarding first 10 insurance partners and establishing API-first architecture.",
     },
     {
-      year: "2020",
-      title: "Market Expansion",
-      description:
-        "Expanded to 25+ insurance partners, launched embedded insurance solutions, and reached 100+ clients across India.",
-    },
-    {
       year: "2021",
-      title: "Analytics Innovation",
+      title: "Product Expansion",
       description:
-        "Introduced Strategic Analytics platform with proprietary 3X-D framework, specializing in automotive and economic data insights.",
+        "Expanded to 25+ insurance partners, and enabled multi product categories.",
     },
     {
       year: "2022",
-      title: "Global Recognition",
+      title: "Closed Funding Round",
       description:
-        "Achieved 300+ global clients, processed ₹500Cr+ in premiums, and gained recognition as India's leading insurtech platform.",
+        "Closed our pre-series A Funding round of $4.2 Mn with global embedded insurance leader as lead investor",
     },
     {
       year: "2023",
+      title: "Embedded Solution",
+      description:
+        "Launched our embedded insurance stack, and gained recognition as India's leading insurtech platform.",
+    },
+    {
+      year: "2024",
       title: "Platform Evolution",
       description:
-        "Launched comprehensive API suite, reached 50+ insurance partners, and established 700+ product catalog across all major insurance categories.",
+        "Launched comprehensive API suite, reached 50+ insurance partners, and established 200+ product catalog across all major insurance categories.",
     },
     {
       year: "2024",
@@ -232,11 +232,11 @@ export default function AboutPage() {
               <div className="text-gray-600 font-medium">Global Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">₹500Cr+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">$400mn +</div>
               <div className="text-gray-600 font-medium">Premium Processed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">70+</div>
               <div className="text-gray-600 font-medium">Insurance Partners</div>
             </div>
           </div>
@@ -260,7 +260,7 @@ export default function AboutPage() {
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Today, we're proud to be India's most trusted insurance technology platform, serving over 300 clients
-                globally and processing more than ₹500 crores in premium annually through our innovative solutions.
+                globally and processing more than $400 million in premium annually through our innovative solutions.
               </p>
             </div>
 
@@ -318,11 +318,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">100+</div>
+              <div className="text-3xl font-bold text-emerald-500 mb-2">75+</div>
               <div className="text-gray-600 font-medium">Team Members</div>
             </div>
             <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">15+</div>
+              <div className="text-3xl font-bold text-emerald-500 mb-2">5+</div>
               <div className="text-gray-600 font-medium">Countries</div>
             </div>
             <div className="text-center p-6 bg-slate-50 rounded-xl">

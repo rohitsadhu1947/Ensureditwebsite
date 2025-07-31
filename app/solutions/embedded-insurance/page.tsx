@@ -37,19 +37,19 @@ export default function EmbeddedInsurancePage() {
       icon: CreditCard,
       title: "Fintech & Banking",
       description:
-        "Embed insurance products into financial services to increase customer lifetime value and provide comprehensive financial protection.",
+        "Boost customer lifetime value with embedded financial protection.",
       benefits: [
         "Credit card protection insurance",
-        "Travel insurance for card holders",
+        "Credit shield/Loan protection insurance",
         "Device protection for mobile banking",
-        "Loan protection insurance",
+        "Hopsi-Cash + EMI Protect + Health Bundles",
       ],
     },
     {
       icon: ShoppingCart,
       title: "E-commerce & Retail",
       description:
-        "Offer product protection, shipping insurance, and warranty extensions at checkout to boost average order value and customer satisfaction.",
+        "Turn checkout into a profit center with instant product protection.",
       benefits: [
         "Product warranty extensions",
         "Shipping protection insurance",
@@ -61,19 +61,19 @@ export default function EmbeddedInsurancePage() {
       icon: Plane,
       title: "Travel & Mobility",
       description:
-        "Provide comprehensive travel protection and mobility insurance integrated directly into booking and ride-sharing platforms.",
+        "Embed protection. Secure journeys. Increase revenue.",
       benefits: [
         "Trip cancellation protection",
         "Ride-sharing insurance coverage",
-        "Rental car protection",
-        "Flight delay compensation",
+        "Parametric travel insurance",
+        "Flight delay compensation CFAR/CFMR",
       ],
     },
     {
       icon: Home,
       title: "Real Estate & PropTech",
       description:
-        "Integrate property insurance, home warranty, and tenant protection seamlessly into real estate transactions and property management.",
+        "Make every property transaction a protected, profitable experience.",
       benefits: [
         "Home buyer protection insurance",
         "Tenant security deposit alternatives",
@@ -85,7 +85,7 @@ export default function EmbeddedInsurancePage() {
       icon: Car,
       title: "Automotive & Fleet",
       description:
-        "Offer comprehensive vehicle protection, fleet insurance, and automotive services insurance through dealership and fleet management platforms.",
+        "Complete vehicle protection built into your automotive platform.",
       benefits: [
         "Extended vehicle warranties",
         "Gap insurance coverage",
@@ -97,7 +97,7 @@ export default function EmbeddedInsurancePage() {
       icon: Briefcase,
       title: "B2B & Enterprise",
       description:
-        "Provide business insurance, professional liability, and cybersecurity coverage embedded in enterprise software and business platforms.",
+        "Complete business protection built into your enterprise platform.",
       benefits: [
         "Professional liability insurance",
         "Cybersecurity protection",

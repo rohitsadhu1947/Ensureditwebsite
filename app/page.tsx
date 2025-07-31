@@ -136,7 +136,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 rounded-full px-4 py-2 text-sm font-semibold text-emerald-700">
                   <TrendingUp className="w-4 h-4 mr-2 text-emerald-600" />
-                  Processing $400M+ Annually | Expanding to 25+ Global Markets
+                  Processing $400M+ Annually | Expanding to 15+ Global Markets
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   The Global Infrastructure for{" "}
@@ -201,7 +201,7 @@ export default function HomePage() {
                   <div className="text-sm text-gray-600 font-medium">Policies Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900">15+</div>
+                  <div className="text-3xl font-bold text-blue-900">5+</div>
                   <div className="text-sm text-gray-600 font-medium">Markets & Expanding</div>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export default function HomePage() {
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-8">
-            Trusted by India's Leading Insurance Companies
+            Trusted by Leading Global Brands 
           </div>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
             {/* Acko Logo */}
@@ -314,8 +314,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Embedded Insurance Platform</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  API-first infrastructure enabling instant insurance integration across any digital touchpoint. Built
-                  for global scale and multi-market deployment.
+                  API-first infrastructure enabling instant insurance integration across any digital touchpoint. 
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -348,13 +347,13 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Distribution Network</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Comprehensive marketplace connecting 180+ carriers across expanding global markets. Complete
+                  Comprehensive marketplace connecting 70+ carriers across expanding global markets. Complete
                   distribution management for rapid scale.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "180+ carrier partnerships globally",
-                    "2,500+ products across all categories",
+                    "70+ carrier partnerships globally",
+                    "250+ products across Motor, Health and Life categories",
                     "Multi-currency & multi-regulatory",
                     "End-to-end distribution management",
                     "Real-time settlement & reporting",
@@ -392,7 +391,7 @@ export default function HomePage() {
                     "Multi-market trend analysis",
                     "Proprietary 3X-D analytics framework",
                     "Real-time risk & opportunity mapping",
-                    "Global expansion planning tools",
+                    "Market expansion planning tools",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -476,7 +475,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Scale Globally?</h2>
           <p className="text-xl mb-10 opacity-90">
-            Join the platform processing $400M+ annually and expanding into 25+ global markets
+            Join the platform processing $400M+ annually and expanding into 15+ global markets
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

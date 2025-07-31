@@ -23,9 +23,9 @@ export default function SolutionsPage() {
       icon: BarChart3,
       title: "Embedded / Affinity Insurance",
       description:
-        "Seamlessly integrate insurance into your existing ecosystem to protect customers and generate additional revenue streams.",
+        "Insurance protection that appears exactly when your customers need it.",
       features: [
-        "Single point API for world-class customer experience",
+        "One API call transforms any platform into an insurance marketplace",
         "Native journeys within your apps and platforms",
         "Widest industry support across sectors",
         "Group and affinity products from global partners",
@@ -35,12 +35,12 @@ export default function SolutionsPage() {
     },
     {
       icon: BarChart3,
-      title: "Retail Insurance Distribution",
+      title: "Global Retail Insurance Distribution",
       description:
-        "Complete digital platform to grow and acquire consumers with access to 50+ insurers and 700+ products across all categories.",
+        "Complete digital platform to grow and acquire consumers with access to 70+ insurers and 250+ products across all categories.",
       features: [
-        "50+ integrated insurance partners",
-        "700+ products across Motor, Health, Life & More",
+        "70+ integrated insurance partners globally",
+        "250+ products across Motor, Health, Life & More",
         "End-to-end sales journey management",
         "Claims and commission management",
       ],
@@ -51,11 +51,11 @@ export default function SolutionsPage() {
       icon: ChartBar,
       title: "Strategic Analytics",
       description:
-        "AI/ML augmented Analytics as a Service providing deep market insights, especially for the automotive sector.",
+        "AI/ML augmented Analytics as a Service providing deep market insights, across Insurance and Automotive sector.",
       features: [
         "RTO level sales data analytics",
         "Automotive and economic data hub",
-        "500+ visualization options",
+        "Lat-Long distribution of Insurance and auto data",
         "Proprietary 3X-D framework",
       ],
       link: "/solutions/strategic-analytics",

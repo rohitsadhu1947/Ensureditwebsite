@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -25,9 +26,11 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 
+
 export default function RetailDistributionPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +39,7 @@ export default function RetailDistributionPage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
 
   const features = [
     {
@@ -101,35 +105,36 @@ export default function RetailDistributionPage() {
     },
   ]
 
+
   const productCategories = [
     {
       icon: Car,
       title: "Motor Insurance",
-      count: "200+",
+      count: "60+",
       label: "Products Available",
     },
     {
       icon: Heart,
       title: "Health Insurance",
-      count: "150+",
+      count: "75+",
       label: "Products Available",
     },
     {
       icon: Briefcase,
       title: "Life Insurance",
-      count: "180+",
+      count: "50+",
       label: "Products Available",
     },
     {
       icon: Plane,
       title: "Travel Insurance",
-      count: "80+",
+      count: "15+",
       label: "Products Available",
     },
     {
       icon: Home,
       title: "Property Insurance",
-      count: "50+",
+      count: "10+",
       label: "Products Available",
     },
     {
@@ -139,6 +144,7 @@ export default function RetailDistributionPage() {
       label: "Products Available",
     },
   ]
+
 
   const processSteps = [
     {
@@ -171,6 +177,7 @@ export default function RetailDistributionPage() {
     },
   ]
 
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -189,6 +196,7 @@ export default function RetailDistributionPage() {
                 <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
               </Link>
             </div>
+
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -223,6 +231,7 @@ export default function RetailDistributionPage() {
               </Link>
             </nav>
 
+
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/demo"
@@ -235,6 +244,7 @@ export default function RetailDistributionPage() {
               </Button>
             </div>
 
+
             {/* Mobile menu button */}
             <button
               className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
@@ -243,6 +253,7 @@ export default function RetailDistributionPage() {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
@@ -275,6 +286,7 @@ export default function RetailDistributionPage() {
         </div>
       </header>
 
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-r from-emerald-500 to-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -282,17 +294,18 @@ export default function RetailDistributionPage() {
             Retail Insurance Distribution Platform
           </h1>
           <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed">
-            Complete digital platform to scale customer acquisition with access to 50+ insurers and 700+ products across
+            Complete digital platform to scale customer acquisition with access to 70+ insurers and 250+ products across
             Motor, Health, Life and specialized coverage
           </p>
 
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">70+</div>
               <div className="text-lg opacity-80">Insurance Partners</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">700+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">250+</div>
               <div className="text-lg opacity-80">Product Catalog</div>
             </div>
             <div className="text-center">
@@ -307,6 +320,7 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
+
       {/* Features Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -316,6 +330,7 @@ export default function RetailDistributionPage() {
               Everything you need to run a successful insurance distribution business in one integrated platform
             </p>
           </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -344,17 +359,19 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
+
       {/* Products Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              700+ Insurance Products Across All Categories
+              250+ Insurance Products Across All Categories
             </h2>
             <p className="text-xl text-gray-600 mb-12">
-              Access India's largest catalog of insurance products from 50+ leading insurers
+              Access largest catalog of insurance products from 70+ leading insurers globally
             </p>
           </div>
+
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {productCategories.map((category, index) => (
@@ -376,6 +393,7 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
+
       {/* Process Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -383,6 +401,7 @@ export default function RetailDistributionPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How Our Platform Works</h2>
             <p className="text-xl text-gray-600">Simple, streamlined process from lead to policy</p>
           </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
@@ -406,6 +425,7 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
+
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -421,12 +441,13 @@ export default function RetailDistributionPage() {
                 </p>
               </div>
 
+
               <div className="space-y-6">
                 {[
                   {
                     title: "Increase Revenue",
                     description:
-                      "Access to 700+ products means more opportunities to match customer needs and earn commissions.",
+                      "Access to 250+ products means more opportunities to match customer needs and earn commissions.",
                   },
                   {
                     title: "Reduce Operational Costs",
@@ -456,6 +477,7 @@ export default function RetailDistributionPage() {
                 ))}
               </div>
 
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
                   <Button
@@ -475,6 +497,7 @@ export default function RetailDistributionPage() {
               </div>
             </div>
 
+
             <div className="bg-slate-100 rounded-2xl p-8">
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
@@ -487,24 +510,26 @@ export default function RetailDistributionPage() {
                   </div>
                 </div>
 
+
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                    <div className="text-2xl font-bold text-emerald-500 mb-1">₹12.5L</div>
+                    <div className="text-2xl font-bold text-emerald-500 mb-1">₹12.5 Cr</div>
                     <div className="text-xs text-gray-600 font-medium">Monthly Premium</div>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                    <div className="text-2xl font-bold text-emerald-500 mb-1">847</div>
+                    <div className="text-2xl font-bold text-emerald-500 mb-1">18,470</div>
                     <div className="text-xs text-gray-600 font-medium">Policies Sold</div>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                    <div className="text-2xl font-bold text-emerald-500 mb-1">₹85K</div>
+                    <div className="text-2xl font-bold text-emerald-500 mb-1">₹85L</div>
                     <div className="text-xs text-gray-600 font-medium">Commission Earned</div>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                    <div className="text-2xl font-bold text-emerald-500 mb-1">94%</div>
+                    <div className="text-2xl font-bold text-emerald-500 mb-1">98%</div>
                     <div className="text-xs text-gray-600 font-medium">Customer Satisfaction</div>
                   </div>
                 </div>
+
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
@@ -535,6 +560,7 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -563,6 +589,7 @@ export default function RetailDistributionPage() {
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">

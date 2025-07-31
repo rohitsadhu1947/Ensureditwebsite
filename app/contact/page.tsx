@@ -60,24 +60,25 @@ export default function ContactPage() {
 
   const officeLocations = [
     {
-      city: "Mumbai",
-      address: "1201, Kailash Business Park, Vikhroli West, Mumbai, Maharashtra 400079",
-      phone: "+91 22 4890 1234",
-      email: "mumbai@ensuredit.com",
+      city: "Hyderabad",
+      address: "Q-city, 109,110,111/112, Wipro Circle Rd, Gachibowli, Nanakramguda, Hyderabad, Telangana 500032",
+      phone: "+91 9527119003",
+      email: "sales@ensuredit.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM",
     },
     {
       city: "Bengaluru",
-      address: "42, Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025",
-      phone: "+91 80 4567 8901",
-      email: "bangalore@ensuredit.com",
+      address:
+        "Third Floor, Above ICICI Bank, # 92, 7th Cross Road, 27th Main Road, Sector 1, HSR Layout, Bangalore 560 102",
+      phone: "+91 9527119003",
+      email: "sales@ensuredit.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM",
     },
     {
       city: "Delhi NCR",
-      address: "Tower A, Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana 122002",
-      phone: "+91 124 567 8901",
-      email: "delhi@ensuredit.com",
+      address: "Tower B, 503, Pioneer urban Square, Sector 62, Gurugram, Haryana 122018",
+      phone: "+91 9527119003",
+      email: "sales@ensuredit.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM",
     },
   ]
@@ -343,7 +344,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Corporate Headquarters</h3>
                     <p className="text-gray-600">
-                      1201, Kailash Business Park, Vikhroli West, Mumbai, Maharashtra 400079, India
+                      Tower B, 503, Pioneer Urban Square, Sector 62,Gurgaon, Haryana, 122018, India
                     </p>
                   </div>
                 </div>
@@ -354,8 +355,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 22 4890 1234</p>
-                    <p className="text-gray-600">Toll-free: 1800 123 4567</p>
+                    <p className="text-gray-600">+91 9527119003</p>
                   </div>
                 </div>
 
@@ -365,8 +365,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@ensuredit.com</p>
-                    <p className="text-gray-600">support@ensuredit.com</p>
+                    <p className="text-gray-600">sales@ensuredit.com</p>
                   </div>
                 </div>
 
