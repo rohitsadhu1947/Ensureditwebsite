@@ -1,122 +1,19 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Menu,
-  X,
-  ArrowRight,
-  CheckCircle,
-  Plug,
-  Settings,
-  Rocket,
-  CreditCard,
-  ShoppingCart,
-  Plane,
-  Home,
-  Car,
-  Briefcase,
-} from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Menu, X, ArrowRight, CheckCircle, Code, Zap, Shield, Globe, Clock, Users } from "lucide-react"
 import Link from "next/link"
 
 export default function EmbeddedInsurancePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const useCases = [
-    {
-      icon: CreditCard,
-      title: "Fintech & Banking",
-      description:
-        "Embed insurance products into financial services to increase customer lifetime value and provide comprehensive financial protection.",
-      benefits: [
-        "Credit card protection insurance",
-        "Travel insurance for card holders",
-        "Device protection for mobile banking",
-        "Loan protection insurance",
-      ],
-    },
-    {
-      icon: ShoppingCart,
-      title: "E-commerce & Retail",
-      description:
-        "Offer product protection, shipping insurance, and warranty extensions at checkout to boost average order value and customer satisfaction.",
-      benefits: [
-        "Product warranty extensions",
-        "Shipping protection insurance",
-        "Electronics & gadget protection",
-        "Return guarantee insurance",
-      ],
-    },
-    {
-      icon: Plane,
-      title: "Travel & Mobility",
-      description:
-        "Provide comprehensive travel protection and mobility insurance integrated directly into booking and ride-sharing platforms.",
-      benefits: [
-        "Trip cancellation protection",
-        "Ride-sharing insurance coverage",
-        "Rental car protection",
-        "Flight delay compensation",
-      ],
-    },
-    {
-      icon: Home,
-      title: "Real Estate & PropTech",
-      description:
-        "Integrate property insurance, home warranty, and tenant protection seamlessly into real estate transactions and property management.",
-      benefits: [
-        "Home buyer protection insurance",
-        "Tenant security deposit alternatives",
-        "Property management insurance",
-        "Home warranty coverage",
-      ],
-    },
-    {
-      icon: Car,
-      title: "Automotive & Fleet",
-      description:
-        "Offer comprehensive vehicle protection, fleet insurance, and automotive services insurance through dealership and fleet management platforms.",
-      benefits: [
-        "Extended vehicle warranties",
-        "Gap insurance coverage",
-        "Fleet protection insurance",
-        "Roadside assistance programs",
-      ],
-    },
-    {
-      icon: Briefcase,
-      title: "B2B & Enterprise",
-      description:
-        "Provide business insurance, professional liability, and cybersecurity coverage embedded in enterprise software and business platforms.",
-      benefits: [
-        "Professional liability insurance",
-        "Cybersecurity protection",
-        "Business interruption coverage",
-        "Employment practices liability",
-      ],
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/98 backdrop-blur-md shadow-lg border-b border-slate-200"
-            : "bg-white/95 backdrop-blur-sm border-b border-slate-200"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
@@ -164,7 +61,7 @@ export default function EmbeddedInsurancePage() {
                 href="/demo"
                 className="text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg font-medium transition-colors"
               >
-                View Demo
+                Schedule Demo
               </Link>
               <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                 Get Started
@@ -201,7 +98,7 @@ export default function EmbeddedInsurancePage() {
                 </Link>
                 <div className="pt-4 space-y-2">
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
-                    View Demo
+                    Schedule Demo
                   </Link>
                   <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
                 </div>
@@ -211,212 +108,306 @@ export default function EmbeddedInsurancePage() {
         </div>
       </header>
 
-      {/* Page Header */}
-      <section className="pt-24 pb-16 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Embedded Insurance Solutions
-          </h1>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed">
-            Seamlessly integrate insurance into your customer journey to protect customers and generate new revenue
-            streams through our API-first platform
-          </p>
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100">Embedded Insurance Platform</Badge>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                  Insurance Integration Made{" "}
+                  <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                    Simple
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Seamlessly embed insurance products into your platform with our powerful API. Protect your customers
+                  and generate new revenue streams without the complexity.
+                </p>
+              </div>
 
-          <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">Single API</div>
-              <div className="text-lg opacity-80">Integration Point</div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/demo">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
+                  >
+                    Schedule Integration Call <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/solutions">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-lg px-8 py-4 bg-transparent"
+                  >
+                    Explore More Solutions
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="flex gap-8 pt-4">
+                <div>
+                  <div className="text-3xl font-bold text-blue-900">5 min</div>
+                  <div className="text-sm text-gray-600 font-medium">Integration Time</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-blue-900">99.9%</div>
+                  <div className="text-sm text-gray-600 font-medium">API Uptime</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-blue-900">50+</div>
+                  <div className="text-sm text-gray-600 font-medium">Insurance Products</div>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">15+</div>
-              <div className="text-lg opacity-80">Industry Verticals</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">24/7</div>
-              <div className="text-lg opacity-80">Real-time Coverage</div>
+
+            <div className="flex justify-center lg:justify-end">
+              <Card className="w-full max-w-md shadow-2xl border-0 bg-white">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-lg flex items-center justify-center text-white font-bold">
+                      API
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Live Integration</div>
+                      <div className="text-sm text-gray-500">Real-time Insurance API</div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                      <div className="text-sm text-gray-600 mb-2">POST /api/v1/quote</div>
+                      <div className="text-lg font-bold text-emerald-500">Response: 200ms</div>
+                    </div>
+                    <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                      <div className="text-sm text-gray-600 mb-2">Coverage Amount</div>
+                      <div className="text-lg font-bold text-blue-600">₹5,00,000</div>
+                    </div>
+                    <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                      <div className="text-sm text-gray-600 mb-2">Premium</div>
+                      <div className="text-lg font-bold text-blue-600">₹2,499/year</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-slate-50">
+      {/* Features Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How Embedded Insurance Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need to Embed Insurance
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Simple integration, powerful results - protect your customers at the point of need
+              Comprehensive tools and features to integrate insurance seamlessly into your platform
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                number: "1",
-                icon: Plug,
-                title: "API Integration",
-                description:
-                  "Integrate our RESTful API into your existing platform with comprehensive documentation and developer support. Single integration, multiple insurance products.",
-              },
-              {
-                number: "2",
-                icon: Settings,
-                title: "Configure Products",
-                description:
-                  "Choose from our extensive catalog of insurance products or work with us to create custom coverage that fits your customer needs perfectly.",
-              },
-              {
-                number: "3",
-                icon: Rocket,
-                title: "Go Live",
-                description:
-                  "Launch insurance offerings within your customer journey. From quote to claims, everything happens seamlessly within your branded experience.",
-              },
-            ].map((step, index) => (
-              <Card
-                key={index}
-                className="relative bg-white shadow-lg border-0 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  {step.number}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Code className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardContent className="pt-12 pb-8 px-8 text-center">
-                  <div className="w-20 h-20 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <step.icon className="w-10 h-10 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                <CardTitle>Simple API Integration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  RESTful APIs with comprehensive documentation. Get started in minutes with our SDKs and code samples.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-emerald-600" />
+                </div>
+                <CardTitle>Real-time Processing</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Instant quotes, real-time policy binding, and immediate certificate generation for seamless user
+                  experience.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-purple-600" />
+                </div>
+                <CardTitle>Multi-Product Support</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Access to 50+ insurance products across motor, health, travel, and specialty insurance categories.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-orange-600" />
+                </div>
+                <CardTitle>Global Compliance</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Built-in compliance for multiple markets with automatic regulatory updates and local requirements.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <Clock className="w-6 h-6 text-red-600" />
+                </div>
+                <CardTitle>24/7 Monitoring</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Continuous system monitoring with 99.9% uptime SLA and proactive issue resolution.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-green-600" />
+                </div>
+                <CardTitle>White-label Solution</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Fully customizable interface that matches your brand. Your customers see your brand, not ours.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Industry Use Cases</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Perfect for Every Industry</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Embedded insurance solutions tailored for every business model
+              See how businesses across industries are using embedded insurance to protect customers and grow revenue
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {useCases.map((useCase, index) => (
-              <Card
-                key={index}
-                className="bg-slate-50 border-l-4 border-l-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-0"
-              >
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6">
-                    <useCase.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{useCase.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{useCase.description}</p>
-                  <ul className="space-y-2">
-                    {useCase.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="text-gray-600 text-sm flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl">E-commerce Platforms</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Protect customer purchases with shipping insurance, product warranties, and return protection.
+                </CardDescription>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Shipping and delivery protection
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Extended warranties
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Return and refund protection
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-      {/* Integration */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Simple API Integration</h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  Our developer-friendly API makes it easy to integrate insurance capabilities into any application.
-                  With comprehensive documentation, SDKs, and 24/7 support, you can be up and running in days, not
-                  months.
-                </p>
-              </div>
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl">Fintech Applications</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Embed insurance into financial products like loans, credit cards, and investment platforms.
+                </CardDescription>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Credit protection insurance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Investment protection
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Personal accident coverage
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-              <div className="space-y-4">
-                {[
-                  "RESTful API with JSON responses",
-                  "Real-time webhooks for instant notifications",
-                  "Sandbox environment for testing",
-                  "Multi-language SDKs and code examples",
-                  "Comprehensive API documentation",
-                  "24/7 developer support",
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-gray-600">{feature}</span>
-                  </div>
-                ))}
-              </div>
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl">Travel & Mobility</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Offer travel insurance, ride protection, and mobility coverage at the point of booking.
+                </CardDescription>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Trip cancellation coverage
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Ride-sharing protection
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Medical emergency coverage
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg">
-                  View API Docs
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
-                >
-                  Get API Key
-                </Button>
-              </div>
-            </div>
-
-            <div className="bg-gray-900 rounded-xl p-6 text-green-400 font-mono text-sm overflow-x-auto">
-              <div className="space-y-2">
-                <div className="text-gray-400">// Create insurance quote</div>
-                <div>
-                  <span className="text-pink-400">POST</span> /api/v1/embedded/quote
-                </div>
-                <div>{"{"}</div>
-                <div className="ml-4">
-                  <span className="text-green-400">"product_type"</span>:{" "}
-                  <span className="text-green-400">"device_protection"</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"item_value"</span>: <span className="text-yellow-400">50000</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"customer_id"</span>:{" "}
-                  <span className="text-green-400">"customer_123"</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"coverage_duration"</span>:{" "}
-                  <span className="text-green-400">"12_months"</span>
-                </div>
-                <div>{"}"}</div>
-                <div className="pt-4 text-gray-400">// Response</div>
-                <div>{"{"}</div>
-                <div className="ml-4">
-                  <span className="text-green-400">"quote_id"</span>:{" "}
-                  <span className="text-green-400">"ENS_EMB_2025_001"</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"premium"</span>: <span className="text-yellow-400">2500</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"coverage_start"</span>:{" "}
-                  <span className="text-green-400">"immediate"</span>,
-                </div>
-                <div className="ml-4">
-                  <span className="text-green-400">"policy_url"</span>:{" "}
-                  <span className="text-green-400">"https://api.ensuredit.com/policy/..."</span>
-                </div>
-                <div>{"}"}</div>
-              </div>
-            </div>
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl">SaaS Platforms</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Protect your customers' businesses with cyber insurance, professional liability, and business
+                  interruption coverage.
+                </CardDescription>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Cyber liability insurance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Professional indemnity
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    Business interruption
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -424,9 +415,9 @@ export default function EmbeddedInsurancePage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Embed Insurance?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Embed Insurance?</h2>
           <p className="text-xl mb-10 opacity-90">
-            Start protecting your customers and generating new revenue with embedded insurance solutions
+            Start protecting your customers and generating new revenue streams in just 5 minutes
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">
@@ -443,7 +434,7 @@ export default function EmbeddedInsurancePage() {
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
               >
-                Explore More Solutions
+                Explore All Solutions
               </Button>
             </Link>
           </div>

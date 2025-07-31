@@ -204,7 +204,7 @@ export default function DemoPage() {
                 </Link>
                 <div className="pt-4 space-y-2">
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
-                    View Demo
+                    Schedule Demo
                   </Link>
                   <Link href="/contact">
                     <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>

@@ -1,138 +1,119 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Search, ExternalLink, Clock, User, ArrowRight, Menu, X } from "lucide-react"
 import Link from "next/link"
 
 export default function ResourcesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   const categories = [
-    { id: "all", name: "All Resources" },
-    { id: "guides", name: "Guides & Tutorials" },
-    { id: "case-studies", name: "Case Studies" },
-    { id: "whitepapers", name: "White Papers" },
-    { id: "webinars", name: "Webinars" },
-    { id: "documentation", name: "Documentation" },
+    { id: "all", name: "All Resources", count: 24 },
+    { id: "guides", name: "Implementation Guides", count: 8 },
+    { id: "case-studies", name: "Case Studies", count: 6 },
+    { id: "documentation", name: "API Documentation", count: 5 },
+    { id: "whitepapers", name: "Whitepapers", count: 3 },
+    { id: "videos", name: "Video Tutorials", count: 2 },
   ]
 
   const resources = [
     {
       id: 1,
-      title: "Complete Guide to Embedded Insurance",
+      title: "Complete Guide to Embedded Insurance Implementation",
+      description: "Step-by-step guide to integrating insurance products into your platform using our APIs.",
       category: "guides",
       type: "Guide",
-      description:
-        "Learn how to integrate insurance products seamlessly into your customer journey with our comprehensive guide.",
-      downloadUrl: "#",
       readTime: "15 min read",
-      image: "📘",
+      author: "Technical Team",
+      date: "2024-01-15",
+      tags: ["API", "Integration", "Embedded Insurance"],
+      featured: true,
     },
     {
       id: 2,
-      title: "Insurance Distribution Platform ROI Calculator",
-      category: "guides",
-      type: "Tool",
-      description: "Calculate the potential return on investment for implementing our retail distribution platform.",
-      downloadUrl: "#",
-      readTime: "5 min",
-      image: "🧮",
+      title: "Fintech Success Story: 300% Growth in 6 Months",
+      description: "How a leading fintech company achieved remarkable growth by integrating our insurance platform.",
+      category: "case-studies",
+      type: "Case Study",
+      readTime: "8 min read",
+      author: "Business Team",
+      date: "2024-01-10",
+      tags: ["Fintech", "Growth", "Success Story"],
+      featured: true,
     },
     {
       id: 3,
-      title: "Case Study: 300% Growth in Insurance Sales",
-      category: "case-studies",
-      type: "Case Study",
-      description:
-        "How a leading fintech company achieved 300% growth in insurance sales using Ensuredit's embedded insurance platform.",
-      downloadUrl: "#",
-      readTime: "8 min read",
-      image: "📈",
+      title: "API Reference Documentation v2.0",
+      description: "Complete API documentation with examples, endpoints, and integration patterns.",
+      category: "documentation",
+      type: "Documentation",
+      readTime: "Reference",
+      author: "Dev Team",
+      date: "2024-01-08",
+      tags: ["API", "Documentation", "Reference"],
+      featured: false,
     },
     {
       id: 4,
-      title: "The Future of Insurance Technology",
+      title: "The Future of Insurance Distribution in India",
+      description: "Market analysis and trends shaping the insurance technology landscape in India.",
       category: "whitepapers",
-      type: "White Paper",
-      description:
-        "Industry insights and trends shaping the future of insurance technology and digital transformation.",
-      downloadUrl: "#",
-      readTime: "25 min read",
-      image: "📄",
+      type: "Whitepaper",
+      readTime: "20 min read",
+      author: "Research Team",
+      date: "2024-01-05",
+      tags: ["Market Analysis", "Trends", "India"],
+      featured: true,
     },
     {
       id: 5,
-      title: "API Integration Best Practices",
-      category: "documentation",
-      type: "Documentation",
-      description: "Technical documentation and best practices for integrating with Ensuredit's API platform.",
-      downloadUrl: "#",
-      readTime: "12 min read",
-      image: "⚙️",
+      title: "Quick Start Video: Platform Integration",
+      description: "Video walkthrough of integrating with our platform in under 30 minutes.",
+      category: "videos",
+      type: "Video",
+      readTime: "12 min watch",
+      author: "Technical Team",
+      date: "2024-01-03",
+      tags: ["Video", "Tutorial", "Quick Start"],
+      featured: false,
     },
     {
       id: 6,
-      title: "Webinar: AI-Powered Analytics in Insurance",
-      category: "webinars",
-      type: "Webinar",
-      description: "Learn how AI and machine learning are transforming insurance analytics and decision-making.",
-      downloadUrl: "#",
-      readTime: "45 min video",
-      image: "🎥",
-    },
-    {
-      id: 7,
-      title: "Getting Started with Enlyt Analytics",
+      title: "E-commerce Insurance Integration Best Practices",
+      description: "Best practices for integrating insurance products into e-commerce platforms.",
       category: "guides",
-      type: "Quick Start",
-      description: "A step-by-step guide to get started with our strategic analytics platform.",
-      downloadUrl: "#",
-      readTime: "10 min read",
-      image: "🚀",
-    },
-    {
-      id: 8,
-      title: "Insurance Regulatory Compliance Guide",
-      category: "whitepapers",
-      type: "White Paper",
-      description: "Navigate insurance regulations across different markets with our comprehensive compliance guide.",
-      downloadUrl: "#",
-      readTime: "20 min read",
-      image: "📋",
+      type: "Guide",
+      readTime: "12 min read",
+      author: "Solutions Team",
+      date: "2023-12-28",
+      tags: ["E-commerce", "Best Practices", "Integration"],
+      featured: false,
     },
   ]
 
   const filteredResources = resources.filter((resource) => {
-    const matchesCategory = selectedCategory === "all" || resource.category === selectedCategory
     const matchesSearch =
       resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      resource.description.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchesCategory && matchesSearch
+      resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      resource.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+
+    const matchesCategory = selectedCategory === "all" || resource.category === selectedCategory
+
+    return matchesSearch && matchesCategory
   })
+
+  const featuredResources = resources.filter((resource) => resource.featured)
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/98 backdrop-blur-md shadow-lg border-b border-slate-200"
-            : "bg-white/95 backdrop-blur-sm border-b border-slate-200"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
@@ -141,6 +122,7 @@ export default function ResourcesPage() {
                 <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
               </Link>
             </div>
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
@@ -173,31 +155,28 @@ export default function ResourcesPage() {
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-emerald-500 group-hover:w-5 transition-all duration-300"></div>
               </Link>
             </nav>
+
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/demo"
                 className="text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg font-medium transition-colors"
               >
-                View Demo
+                Schedule Demo
               </Link>
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                  Get Started
-                </Button>
-              </Link>
+              <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+                Get Started
+              </Button>
             </div>
+
             {/* Mobile menu button */}
             <button
               className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? (
-                <span className="h-6 w-6 block text-xl">✕</span>
-              ) : (
-                <span className="h-6 w-6 block text-xl">☰</span>
-              )}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg">
@@ -219,11 +198,9 @@ export default function ResourcesPage() {
                 </Link>
                 <div className="pt-4 space-y-2">
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
-                    View Demo
+                    Schedule Demo
                   </Link>
-                  <Link href="/contact">
-                    <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
-                  </Link>
+                  <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
                 </div>
               </nav>
             </div>
@@ -232,114 +209,157 @@ export default function ResourcesPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Resources & Knowledge Hub</h1>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed">
-            Explore our comprehensive collection of guides, case studies, white papers, and tools to help you succeed
-            with insurance technology
-          </p>
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="py-12 bg-slate-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            <div className="w-full lg:w-1/2">
-              <Input
-                type="text"
-                placeholder="Search resources..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full h-12 text-lg"
-              />
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "bg-white text-gray-600 hover:bg-gray-100"
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Knowledge Hub & Resources</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything you need to succeed with our platform - from implementation guides to market insights
+            </p>
+          </div>
+
+          {/* Search and Filter */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Input
+                  placeholder="Search resources, guides, case studies..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10 h-12 text-lg"
+                />
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+                {categories.map((category) => (
+                  <Button
+                    key={category.id}
+                    variant={selectedCategory === category.id ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className="whitespace-nowrap"
+                  >
+                    {category.name} ({category.count})
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Resources Grid */}
-      <section className="py-20 bg-white">
+      {/* Featured Resources */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Resources</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredResources.map((resource) => (
+            {featuredResources.map((resource) => (
               <Card
                 key={resource.id}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-white"
+                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="text-4xl">{resource.image}</div>
-                    <div className="flex-1">
-                      <div className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full mb-2">
-                        {resource.type}
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                        {resource.title}
-                      </h3>
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary">{resource.type}</Badge>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Clock className="h-4 w-4 mr-1" />
+                      {resource.readTime}
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{resource.description}</p>
+                  <CardTitle className="group-hover:text-blue-600 transition-colors">{resource.title}</CardTitle>
+                  <CardDescription>{resource.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {resource.tags.map((tag) => (
+                      <Badge key={tag} variant="outline" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{resource.readTime}</span>
-                    <a
-                      href={resource.downloadUrl}
-                      className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1"
-                    >
-                      Download <span>→</span>
-                    </a>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <User className="h-4 w-4 mr-1" />
+                      {resource.author}
+                    </div>
+                    <Button variant="ghost" size="sm" className="group-hover:text-blue-600">
+                      Read More <ArrowRight className="h-4 w-4 ml-1" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          {filteredResources.length === 0 && (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No resources found</h3>
-              <p className="text-gray-600">Try adjusting your search criteria or browse all resources.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Stay Updated</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Get the latest resources, insights, and updates delivered to your inbox
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input type="email" placeholder="Enter your email" className="flex-1" />
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8">Subscribe</Button>
+      {/* All Resources */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">All Resources ({filteredResources.length})</h2>
           </div>
+
+          <div className="grid gap-6">
+            {filteredResources.map((resource) => (
+              <Card key={resource.id} className="group hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary">{resource.type}</Badge>
+                        <div className="flex items-center text-sm text-gray-500">
+                          <Clock className="h-4 w-4 mr-1" />
+                          {resource.readTime}
+                        </div>
+                        <div className="flex items-center text-sm text-gray-500">
+                          <User className="h-4 w-4 mr-1" />
+                          {resource.author}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        {resource.title}
+                      </h3>
+                      <p className="text-gray-600 mb-3">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {resource.tags.map((tag) => (
+                          <Badge key={tag} variant="outline" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-4 md:mt-0 md:ml-6">
+                      <Button
+                        variant="outline"
+                        className="group-hover:bg-blue-50 group-hover:border-blue-200 bg-transparent"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Resource
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {filteredResources.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-gray-500 mb-4">
+                <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p className="text-lg">No resources found matching your criteria.</p>
+                <p className="text-sm">Try adjusting your search terms or category filter.</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-10 opacity-90">
-            Have questions about our platform? Our team is here to help you succeed.
-          </p>
+          <h2 className="text-4xl font-bold mb-6">Need More Help?</h2>
+          <p className="text-xl mb-10 opacity-90">Our team is here to support your integration and growth journey</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">
               <Button
@@ -355,7 +375,7 @@ export default function ResourcesPage() {
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
               >
-                Contact Sales
+                Contact Support
               </Button>
             </Link>
           </div>

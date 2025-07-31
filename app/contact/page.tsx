@@ -2,96 +2,53 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Menu, X, MapPin, Phone, Mail, Clock, Send, CheckCircle, Building2, Globe } from "lucide-react"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Menu, X, Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    phone: "",
+    role: "",
+    inquiry: "",
     message: "",
-    subject: "General Inquiry",
   })
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData)
-
-    // Show success message
-    setFormSubmitted(true)
-
-    // Reset form after 5 seconds
+    // Simulate form submission
+    setIsSubmitted(true)
     setTimeout(() => {
-      setFormSubmitted(false)
+      setIsSubmitted(false)
       setFormData({
         name: "",
         email: "",
         company: "",
-        phone: "",
+        role: "",
+        inquiry: "",
         message: "",
-        subject: "General Inquiry",
       })
-    }, 5000)
+    }, 3000)
   }
 
-  const officeLocations = [
-    {
-      city: "Mumbai",
-      address: "1201, Kailash Business Park, Vikhroli West, Mumbai, Maharashtra 400079",
-      phone: "+91 22 4890 1234",
-      email: "mumbai@ensuredit.com",
-      hours: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      city: "Bengaluru",
-      address: "42, Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025",
-      phone: "+91 80 4567 8901",
-      email: "bangalore@ensuredit.com",
-      hours: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      city: "Delhi NCR",
-      address: "Tower A, Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana 122002",
-      phone: "+91 124 567 8901",
-      email: "delhi@ensuredit.com",
-      hours: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-  ]
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/98 backdrop-blur-md shadow-lg border-b border-slate-200"
-            : "bg-white/95 backdrop-blur-sm border-b border-slate-200"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
@@ -139,7 +96,7 @@ export default function ContactPage() {
                 href="/demo"
                 className="text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg font-medium transition-colors"
               >
-                View Demo
+                Schedule Demo
               </Link>
               <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                 Get Started
@@ -176,7 +133,7 @@ export default function ContactPage() {
                 </Link>
                 <div className="pt-4 space-y-2">
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
-                    View Demo
+                    Schedule Demo
                   </Link>
                   <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
                 </div>
@@ -187,341 +144,196 @@ export default function ContactPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Get in Touch</h1>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed">
-            Have questions about our platform or solutions? We're here to help you transform your insurance business.
-          </p>
+      <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to transform your insurance operations? Let's discuss how we can help you scale and succeed.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Form and Info Section */}
-      <section className="py-20 bg-white">
+      {/* Contact Information */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              <p className="text-gray-600 mb-8">
-                Fill out the form below and our team will get back to you within 24 hours.
-              </p>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
+                <p className="text-gray-600 mb-4">Get in touch via email</p>
+                <a href="mailto:hello@ensuredit.com" className="text-blue-600 hover:text-blue-700 font-medium">
+                  hello@ensuredit.com
+                </a>
+              </CardContent>
+            </Card>
 
-              {formSubmitted ? (
-                <Card className="bg-emerald-50 border-emerald-200">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-8 h-8 text-emerald-500" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                    <p className="text-gray-600">
-                      Your message has been sent successfully. We'll get back to you shortly.
-                    </p>
-                  </CardContent>
-                </Card>
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
+                <p className="text-gray-600 mb-4">Speak with our team</p>
+                <a href="tel:+911234567890" className="text-blue-600 hover:text-blue-700 font-medium">
+                  +91 123 456 7890
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit Us</h3>
+                <p className="text-gray-600 mb-4">Our headquarters</p>
+                <p className="text-blue-600 font-medium">Mumbai, India</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
+            <p className="text-lg text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
+          </div>
+
+          <Card className="shadow-xl">
+            <CardContent className="p-8">
+              {isSubmitted ? (
+                <div className="text-center py-12">
+                  <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
+                  <p className="text-gray-600">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                        Full Name *
-                      </label>
+                      <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
-                        name="name"
                         value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        placeholder="Your full name"
                         required
-                        className="w-full"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                        Email Address *
-                      </label>
+                      <Label htmlFor="email">Email Address *</Label>
                       <Input
                         id="email"
-                        name="email"
                         type="email"
                         value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        placeholder="your.email@company.com"
                         required
-                        className="w-full"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-medium text-gray-700">
-                        Company Name
-                      </label>
+                      <Label htmlFor="company">Company Name *</Label>
                       <Input
                         id="company"
-                        name="company"
                         value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your Company"
-                        className="w-full"
+                        onChange={(e) => handleInputChange("company", e.target.value)}
+                        placeholder="Your company name"
+                        required
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium text-gray-700">
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 98765 43210"
-                        className="w-full"
-                      />
+                      <Label htmlFor="role">Your Role</Label>
+                      <Select onValueChange={(value) => handleInputChange("role", value)}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select your role" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="ceo">CEO/Founder</SelectItem>
+                          <SelectItem value="cto">CTO/Tech Lead</SelectItem>
+                          <SelectItem value="product">Product Manager</SelectItem>
+                          <SelectItem value="business">Business Development</SelectItem>
+                          <SelectItem value="developer">Developer</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-gray-700">
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Sales Question">Sales Question</option>
-                      <option value="Technical Support">Technical Support</option>
-                      <option value="Partnership Opportunity">Partnership Opportunity</option>
-                      <option value="Career Information">Career Information</option>
-                    </select>
+                    <Label htmlFor="inquiry">Type of Inquiry</Label>
+                    <Select onValueChange={(value) => handleInputChange("inquiry", value)}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="What can we help you with?" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="demo">Schedule a Demo</SelectItem>
+                        <SelectItem value="partnership">Partnership Opportunities</SelectItem>
+                        <SelectItem value="integration">API Integration</SelectItem>
+                        <SelectItem value="pricing">Pricing Information</SelectItem>
+                        <SelectItem value="support">Technical Support</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-gray-700">
-                      Message *
-                    </label>
+                    <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
-                      name="message"
                       value={formData.message}
-                      onChange={handleChange}
-                      placeholder="How can we help you?"
+                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      placeholder="Tell us more about your requirements..."
+                      rows={5}
                       required
-                      className="min-h-[150px] w-full"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 w-full md:w-auto px-8 py-3"
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
-                    Send Message <Send className="ml-2 h-4 w-4" />
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
                   </Button>
                 </form>
               )}
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Office Hours */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-full px-6 py-3 mb-8">
+              <Clock className="w-5 h-5 mr-2 text-blue-600" />
+              <span className="text-blue-700 font-semibold">
+                Our team typically responds within 2-4 hours during business hours
+              </span>
             </div>
-
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
-              <p className="text-gray-600 mb-8">
-                Reach out to us directly or visit one of our offices. We're available to assist you with any questions
-                about our insurance technology solutions.
-              </p>
-
-              <div className="space-y-6 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Building2 className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Corporate Headquarters</h3>
-                    <p className="text-gray-600">
-                      1201, Kailash Business Park, Vikhroli West, Mumbai, Maharashtra 400079, India
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 22 4890 1234</p>
-                    <p className="text-gray-600">Toll-free: 1800 123 4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@ensuredit.com</p>
-                    <p className="text-gray-600">support@ensuredit.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Globe className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Social Media</h3>
-                    <div className="flex gap-4 mt-2">
-                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                        LinkedIn
-                      </a>
-                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                        Twitter
-                      </a>
-                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                        Facebook
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">India Office Hours</h3>
+                <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM IST</p>
               </div>
-
-              {/* Business Hours */}
-              <Card className="bg-slate-50 border-0">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Clock className="w-5 h-5 text-blue-600" />
-                    <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                  </div>
-                  <div className="space-y-2 text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                    <p>Saturday: 10:00 AM - 2:00 PM IST</p>
-                    <p>Sunday: Closed</p>
-                    <p className="text-sm mt-4">* Technical support is available 24/7 for our enterprise customers.</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Office Locations */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Offices</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Visit us at one of our offices across India</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {officeLocations.map((office, index) => (
-              <Card
-                key={index}
-                className="bg-white shadow-lg border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                    <MapPin className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{office.city}</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                      <p className="text-gray-600">{office.address}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      <p className="text-gray-600">{office.phone}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      <p className="text-gray-600">{office.email}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      <p className="text-gray-600">{office.hours}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our headquarters is conveniently located in Mumbai
-            </p>
-          </div>
-
-          <div className="aspect-[16/9] w-full bg-slate-200 rounded-xl overflow-hidden">
-            {/* This would typically be an iframe with Google Maps or similar */}
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <p className="text-lg font-medium text-gray-900">Ensuredit Headquarters</p>
-                <p className="text-gray-600">Mumbai, Maharashtra, India</p>
-                <Button className="mt-4 bg-blue-600">Open in Google Maps</Button>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Global Support</h3>
+                <p className="text-gray-600">24/7 technical support for enterprise clients</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Find quick answers to common questions</p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: "How quickly can I get a response to my inquiry?",
-                answer:
-                  "We typically respond to all inquiries within 24 business hours. For urgent matters, please call our support line directly.",
-              },
-              {
-                question: "Do you offer product demos?",
-                answer:
-                  "Yes, we offer personalized product demos for all our solutions. You can request a demo through our contact form or by calling our sales team directly.",
-              },
-              {
-                question: "How can I become a partner?",
-                answer:
-                  "We're always looking for strategic partnerships. Please reach out to our partnerships team at partners@ensuredit.com with details about your company and partnership interests.",
-              },
-              {
-                question: "Where can I find technical documentation?",
-                answer:
-                  "All technical documentation is available in our Developer Portal. You'll need to create an account to access the documentation.",
-              },
-              {
-                question: "Do you have job openings?",
-                answer:
-                  "Yes, we're always looking for talented individuals to join our team. Please visit our Careers page to see current openings.",
-              },
-            ].map((faq, index) => (
-              <Card key={index} className="bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -529,9 +341,9 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-10 opacity-90">
-            Schedule a demo today and see how Ensuredit can transform your insurance business
+            Join hundreds of companies already transforming their insurance operations with Ensuredit
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">
@@ -548,7 +360,7 @@ export default function ContactPage() {
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
               >
-                Get Started
+                Contact Sales
               </Button>
             </Link>
           </div>

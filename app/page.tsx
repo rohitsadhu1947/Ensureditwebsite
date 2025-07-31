@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Menu, X, ArrowRight, CheckCircle, Cloud, Plug, Target, Settings, Zap } from "lucide-react"
+import { Menu, X, ArrowRight, CheckCircle, Cloud, Plug, Target, Settings, Zap, Globe, TrendingUp } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,6 +18,51 @@ export default function HomePage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const insuranceLogos = [
+    {
+      src: "/images/acko-logo.png",
+      alt: "Acko Insurance",
+      width: 120,
+      height: 40,
+    },
+    {
+      src: "/images/icici-lombard-logo.png",
+      alt: "ICICI Lombard General Insurance",
+      width: 140,
+      height: 40,
+    },
+    {
+      src: "/images/hdfc-life-logo.png",
+      alt: "HDFC Life Insurance",
+      width: 130,
+      height: 40,
+    },
+    {
+      src: "/images/sbi-logo.png",
+      alt: "SBI Life Insurance",
+      width: 100,
+      height: 40,
+    },
+    {
+      src: "/images/bajaj-allianz-logo.png",
+      alt: "Bajaj Allianz General Insurance",
+      width: 140,
+      height: 40,
+    },
+    {
+      src: "/images/digit-logo.png",
+      alt: "Digit Insurance",
+      width: 110,
+      height: 40,
+    },
+    {
+      src: "/images/hdfc-ergo-logo.png",
+      alt: "HDFC ERGO General Insurance",
+      width: 150,
+      height: 40,
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -133,15 +179,19 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
+                <div className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 rounded-full px-4 py-2 text-sm font-semibold text-emerald-700">
+                  <TrendingUp className="w-4 h-4 mr-2 text-emerald-600" />
+                  Processing $400M+ Annually | Expanding to 25+ Global Markets
+                </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Scale Your Insurance Business with{" "}
+                  The Global Infrastructure for{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
-                    Powerful Digital Solutions
+                    Next-Generation Insurance
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  From embedded insurance to retail distribution and strategic analytics - everything you need to
-                  innovate, connect, and excel.
+                  Built to power the future of global insurance. Processing $400M+ annually across 4M+ policies and
+                  scaling rapidly into emerging markets worldwide.
                 </p>
               </div>
 
@@ -150,19 +200,19 @@ export default function HomePage() {
                   <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-600 font-medium">50+ Insurance Partners</span>
+                  <span className="text-gray-600 font-medium">Enterprise-Grade Architecture</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-600 font-medium">300+ Global Clients</span>
+                  <span className="text-gray-600 font-medium">Multi-Market Compliance</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-600 font-medium">AWS Cloud Native</span>
+                  <span className="text-gray-600 font-medium">99.99% Platform Reliability</span>
                 </div>
               </div>
 
@@ -172,7 +222,7 @@ export default function HomePage() {
                     size="lg"
                     className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
                   >
-                    Schedule Demo <ArrowRight className="ml-2 h-5 w-5" />
+                    Schedule Enterprise Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link href="/solutions">
@@ -181,23 +231,23 @@ export default function HomePage() {
                     variant="outline"
                     className="border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-lg px-8 py-4 bg-transparent"
                   >
-                    Explore Solutions
+                    Explore Global Platform
                   </Button>
                 </Link>
               </div>
 
               <div className="flex gap-8 pt-4">
                 <div>
-                  <div className="text-3xl font-bold text-blue-900">250+</div>
-                  <div className="text-sm text-gray-600 font-medium">Insurance Products</div>
+                  <div className="text-3xl font-bold text-blue-900">$400M+</div>
+                  <div className="text-sm text-gray-600 font-medium">Annual GWP Processed</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900">99.9%</div>
-                  <div className="text-sm text-gray-600 font-medium">Platform Uptime</div>
+                  <div className="text-3xl font-bold text-blue-900">4M+</div>
+                  <div className="text-sm text-gray-600 font-medium">Policies Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900">2.3s</div>
-                  <div className="text-sm text-gray-600 font-medium">Avg Response Time</div>
+                  <div className="text-3xl font-bold text-blue-900">15+</div>
+                  <div className="text-sm text-gray-600 font-medium">Markets & Expanding</div>
                 </div>
               </div>
             </div>
@@ -210,26 +260,26 @@ export default function HomePage() {
                       E
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Ensuredit Dashboard</div>
-                      <div className="text-sm text-gray-500">Real-time Analytics</div>
+                      <div className="font-semibold text-gray-900">Global Expansion Hub</div>
+                      <div className="text-sm text-gray-500">Real-time Growth Metrics</div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">₹2400Cr</div>
-                      <div className="text-xs text-gray-600 font-medium">Annual Premium</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">$33M</div>
+                      <div className="text-xs text-gray-600 font-medium">Monthly GWP</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">3,500,000</div>
-                      <div className="text-xs text-gray-600 font-medium">Active Policies</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">330K</div>
+                      <div className="text-xs text-gray-600 font-medium">Monthly Policies</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">50+</div>
-                      <div className="text-xs text-gray-600 font-medium">Partner Insurers</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">180+</div>
+                      <div className="text-xs text-gray-600 font-medium">Global Partners</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">98%</div>
-                      <div className="text-xs text-gray-600 font-medium">Customer Satisfaction</div>
+                      <div className="text-2xl font-bold text-emerald-500 mb-1">99.99%</div>
+                      <div className="text-xs text-gray-600 font-medium">Platform Uptime</div>
                     </div>
                   </div>
                 </CardContent>
@@ -240,22 +290,38 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-16 bg-white border-b border-slate-200">
+      <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-8">
+          <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-12">
             Trusted by India's Leading Insurance Companies
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
-            {["ICICI Lombard", "HDFC ERGO", "Bajaj Allianz", "TATA AIG", "Reliance General", "+ 45 More"].map(
-              (partner, index) => (
-                <div
-                  key={index}
-                  className="p-3 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="font-semibold text-gray-600 text-sm">{partner}</div>
-                </div>
-              ),
-            )}
+
+          {/* Logo Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center mb-12">
+            {insuranceLogos.map((logo, index) => (
+              <div
+                key={index}
+                className="flex justify-center items-center p-4 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1 group"
+              >
+                <Image
+                  src={logo.src || "/placeholder.svg"}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Additional Partners Text */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-full px-6 py-3">
+              <Globe className="w-5 h-5 mr-2 text-blue-600" />
+              <span className="text-blue-700 font-semibold">
+                + 170 More Partners | Expanding into Southeast Asia, Middle East & Africa
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -264,9 +330,11 @@ export default function HomePage() {
       <section id="solutions" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Three Powerful Solutions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Complete Global Insurance Infrastructure
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Complete insurance technology platform designed to accelerate your business growth across all touchpoints
+              Three interconnected platforms built for rapid global expansion and multi-market operations
             </p>
           </div>
 
@@ -278,17 +346,17 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
                   🔗
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Embedded / Affinity Insurance</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Embedded Insurance Platform</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Seamlessly integrate insurance into your existing ecosystem to protect customers and generate
-                  additional revenue streams.
+                  API-first infrastructure enabling instant insurance integration across any digital touchpoint. Built
+                  for global scale and multi-market deployment.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Single point API for world-class customer experience",
-                    "Native journeys within your apps and platforms",
-                    "Widest industry support across sectors",
-                    "Group and affinity products from global partners",
+                    "Single API, unlimited global integrations",
+                    "Multi-market regulatory compliance",
+                    "Real-time quote & bind capabilities",
+                    "Enterprise-grade security & performance",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -300,7 +368,7 @@ export default function HomePage() {
                   href="/solutions/embedded-insurance"
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"
                 >
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  Explore Platform <ArrowRight className="w-4 h-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -312,18 +380,18 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
                   🏪
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Retail Insurance Distribution</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Distribution Network</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Complete digital platform to grow and acquire consumers with access to 50+ insurers and 700+ products
-                  across all categories.
+                  Comprehensive marketplace connecting 180+ carriers across expanding global markets. Complete
+                  distribution management for rapid scale.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "50+ integrated insurance partners",
-                    "700+ products across Motor, Health, Life & More",
-                    "End-to-end sales journey management",
-                    "Claims and commission management",
-                    "Comprehensive MIS and reporting",
+                    "180+ carrier partnerships globally",
+                    "2,500+ products across all categories",
+                    "Multi-currency & multi-regulatory",
+                    "End-to-end distribution management",
+                    "Real-time settlement & reporting",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -335,7 +403,7 @@ export default function HomePage() {
                   href="/solutions/retail-distribution"
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"
                 >
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  Explore Network <ArrowRight className="w-4 h-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -347,18 +415,18 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
                   📊
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Strategic Analytics</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Strategic Analytics Engine</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  AI/ML augmented Analytics as a Service providing deep market insights, especially for the automotive
-                  sector.
+                  AI-powered market intelligence processing global insurance data. Drive expansion decisions with
+                  real-time market insights.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "RTO level sales data analytics",
-                    "Automotive and economic data hub",
-                    "500+ visualization options",
-                    "Proprietary 3X-D framework",
-                    "Machine learning-powered insights",
+                    "AI-driven market intelligence",
+                    "Multi-market trend analysis",
+                    "Proprietary 3X-D analytics framework",
+                    "Real-time risk & opportunity mapping",
+                    "Global expansion planning tools",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -370,7 +438,7 @@ export default function HomePage() {
                   href="/solutions/strategic-analytics"
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"
                 >
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  Explore Intelligence <ArrowRight className="w-4 h-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -382,9 +450,9 @@ export default function HomePage() {
       <section id="platform" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Enterprise-Grade Platform</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Built for Global Scale & Expansion</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built for scale, security, and seamless integration with everything you need to succeed
+              Enterprise infrastructure designed to power rapid expansion across emerging and established markets
             </p>
           </div>
 
@@ -392,33 +460,33 @@ export default function HomePage() {
             {[
               {
                 icon: Cloud,
-                title: "Cloud Native",
-                description: "Hosted on Amazon Web Services for unlimited scalability and 99.9% uptime reliability",
+                title: "Multi-Cloud",
+                description: "Global deployment across AWS, Azure with automatic failover and 99.99% uptime",
               },
               {
                 icon: Plug,
-                title: "Open API",
-                description: "Easily add functionality, capabilities, and products with our flexible REST API",
+                title: "Universal APIs",
+                description: "Single integration supporting unlimited markets with localized compliance",
               },
               {
-                icon: CheckCircle,
-                title: "Proven Track Record",
-                description: "Successfully deployed with 300+ clients globally across multiple markets",
+                icon: Globe,
+                title: "Global Ready",
+                description: "Multi-currency, multi-language, multi-regulatory compliance out of the box",
               },
               {
                 icon: Settings,
-                title: "Highly Customizable",
-                description: "Flexible workflows and automations tailored to your specific business needs",
+                title: "Auto-Scaling",
+                description: "Infrastructure that grows automatically with your global expansion",
               },
               {
                 icon: Target,
-                title: "All-in-One Platform",
-                description: "Manage your entire insurance distribution lifecycle from one unified dashboard",
+                title: "Enterprise SLA",
+                description: "Mission-critical reliability with 24/7 global support and monitoring",
               },
               {
                 icon: Zap,
-                title: "Rapid Deployment",
-                description: "Go to market in days, not months, with our streamlined implementation process",
+                title: "Real-time",
+                description: "Instant processing and settlement across all time zones and markets",
               },
             ].map((feature, index) => (
               <div
@@ -440,9 +508,9 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-radial from-white/10 to-transparent rounded-full"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Insurance Business?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Scale Globally?</h2>
           <p className="text-xl mb-10 opacity-90">
-            Join 300+ companies already scaling with Ensuredit's comprehensive platform
+            Join the platform processing $400M+ annually and expanding into 25+ global markets
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">
@@ -450,7 +518,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
               >
-                Schedule Demo
+                Schedule Enterprise Demo
               </Button>
             </Link>
             <Link href="/contact">
@@ -459,7 +527,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
               >
-                Contact Sales
+                Contact Global Sales
               </Button>
             </Link>
           </div>
@@ -478,7 +546,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-400">
-                Professional insurance technology platform for teams and businesses worldwide.
+                The global infrastructure powering next-generation insurance technology for rapid market expansion.
               </p>
             </div>
             <div>
@@ -486,22 +554,22 @@ export default function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <Link href="/solutions/embedded-insurance" className="hover:text-white transition-colors">
-                    Embedded Insurance
+                    Embedded Platform
                   </Link>
                 </li>
                 <li>
                   <Link href="/solutions/retail-distribution" className="hover:text-white transition-colors">
-                    Retail Distribution
+                    Global Distribution
                   </Link>
                 </li>
                 <li>
                   <Link href="/solutions/strategic-analytics" className="hover:text-white transition-colors">
-                    Strategic Analytics
+                    Analytics Engine
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    API Integration
+                    Enterprise Platform
                   </Link>
                 </li>
               </ul>

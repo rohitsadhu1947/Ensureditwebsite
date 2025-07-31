@@ -1,116 +1,18 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Menu, X, Target, Eye, Zap } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Menu, X, Users, Target, Award, TrendingUp, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const missionCards = [
-    {
-      icon: Target,
-      title: "Mission",
-      description:
-        "To democratize access to insurance technology by providing comprehensive, API-first solutions that enable any business to offer insurance products seamlessly to their customers.",
-    },
-    {
-      icon: Eye,
-      title: "Vision",
-      description:
-        "To become the global infrastructure layer for insurance, powering embedded protection for billions of customers across all digital touchpoints worldwide.",
-    },
-    {
-      icon: Zap,
-      title: "Impact",
-      description:
-        "Creating a world where insurance protection is accessible, affordable, and automatically available whenever and wherever people need it most.",
-    },
-  ]
-
-  const teamValues = [
-    {
-      title: "Innovation First",
-      description:
-        "We constantly push the boundaries of what's possible in insurance technology, embracing new ideas and cutting-edge solutions.",
-    },
-    {
-      title: "Customer Obsession",
-      description:
-        "Every decision we make is driven by our commitment to delivering exceptional value and experiences for our clients and their customers.",
-    },
-    {
-      title: "Global Mindset",
-      description:
-        "While rooted in India, we think globally, building solutions that scale across markets, cultures, and regulatory environments.",
-    },
-    {
-      title: "Transparency & Trust",
-      description:
-        "We believe in open communication, ethical business practices, and building long-term partnerships based on mutual trust.",
-    },
-  ]
-
-  const timeline = [
-    {
-      year: "2019",
-      title: "Platform Foundation",
-      description:
-        "Launched Ensuredit with core insurance distribution platform, onboarding first 10 insurance partners and establishing API-first architecture.",
-    },
-    {
-      year: "2020",
-      title: "Market Expansion",
-      description:
-        "Expanded to 25+ insurance partners, launched embedded insurance solutions, and reached 100+ clients across India.",
-    },
-    {
-      year: "2021",
-      title: "Analytics Innovation",
-      description:
-        "Introduced Strategic Analytics platform with proprietary 3X-D framework, specializing in automotive and economic data insights.",
-    },
-    {
-      year: "2022",
-      title: "Global Recognition",
-      description:
-        "Achieved 300+ global clients, processed ₹500Cr+ in premiums, and gained recognition as India's leading insurtech platform.",
-    },
-    {
-      year: "2023",
-      title: "Platform Evolution",
-      description:
-        "Launched comprehensive API suite, reached 50+ insurance partners, and established 700+ product catalog across all major insurance categories.",
-    },
-    {
-      year: "2024",
-      title: "International Expansion",
-      description:
-        "Expanded platform capabilities globally, enhanced AI/ML analytics, and positioned for next phase of international growth.",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/98 backdrop-blur-md shadow-lg border-b border-slate-200"
-            : "bg-white/95 backdrop-blur-sm border-b border-slate-200"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
@@ -158,7 +60,7 @@ export default function AboutPage() {
                 href="/demo"
                 className="text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg font-medium transition-colors"
               >
-                View Demo
+                Schedule Demo
               </Link>
               <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                 Get Started
@@ -195,7 +97,7 @@ export default function AboutPage() {
                 </Link>
                 <div className="pt-4 space-y-2">
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
-                    View Demo
+                    Schedule Demo
                   </Link>
                   <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
                 </div>
@@ -206,102 +108,119 @@ export default function AboutPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-blue-500/8 to-transparent rounded-full"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Building the{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
-              Future of Insurance
-            </span>{" "}
-            Technology
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto">
-            Ensuredit is India's leading insurance technology platform, empowering businesses to innovate, connect, and
-            excel in the digital insurance landscape.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">2019</div>
-              <div className="text-gray-600 font-medium">Founded</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">300+</div>
-              <div className="text-gray-600 font-medium">Global Clients</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">₹500Cr+</div>
-              <div className="text-gray-600 font-medium">Premium Processed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">50+</div>
-              <div className="text-gray-600 font-medium">Insurance Partners</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Ensuredit was born from a simple observation: the insurance industry was ripe for digital
-                transformation, but existing solutions were fragmented, complex, and didn't serve the growing needs of
-                modern businesses.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our founders, with deep experience in both insurance and technology, saw an opportunity to build a
-                comprehensive platform that would bridge the gap between traditional insurance and the digital economy.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we're proud to be India's most trusted insurance technology platform, serving over 300 clients
-                globally and processing more than ₹500 crores in premium annually through our innovative solutions.
-              </p>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-8 text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl">
-                🚀
-              </div>
-              <blockquote className="text-xl italic text-gray-900 mb-4">
-                "We believe insurance should be invisible to the end user but invaluable when they need it most."
-              </blockquote>
-              <cite className="text-blue-600 font-semibold">- Ensuredit Leadership Team</cite>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Mission & Vision</h2>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Building the Future of Insurance Technology
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transforming how insurance is bought, sold, and experienced in the digital age
+              We're on a mission to democratize insurance access globally through innovative technology and strategic
+              partnerships
             </p>
           </div>
 
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-900 mb-2">300+</div>
+              <div className="text-gray-600">Global Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-900 mb-2">50+</div>
+              <div className="text-gray-600">Insurance Partners</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-900 mb-2">15+</div>
+              <div className="text-gray-600">Markets Served</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-900 mb-2">99.9%</div>
+              <div className="text-gray-600">Platform Uptime</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                To make insurance accessible, affordable, and seamless for everyone, everywhere. We believe that
+                protection should be a fundamental right, not a privilege.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Through cutting-edge technology and strategic partnerships, we're breaking down barriers and creating
+                new possibilities in the insurance ecosystem.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 p-8 rounded-2xl">
+              <Target className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-600">
+                To be the global infrastructure that powers the next generation of insurance innovation, enabling
+                seamless protection across all digital touchpoints worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
-            {missionCards.map((card, index) => (
-              <Card
-                key={index}
-                className="bg-white shadow-lg border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <card.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{card.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{card.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle>Customer First</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Every decision we make is driven by what's best for our customers and their end users. We obsess over
+                  user experience and customer success.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle>Innovation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  We continuously push boundaries and challenge the status quo. Innovation isn't just what we do—it's
+                  who we are.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle>Integrity</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  We operate with transparency, honesty, and ethical practices in all our relationships and business
+                  dealings.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -310,80 +229,91 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Team & Culture</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Passionate professionals dedicated to revolutionizing insurance technology
+              Experienced leaders driving innovation in insurance technology
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">100+</div>
-              <div className="text-gray-600 font-medium">Team Members</div>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">15+</div>
-              <div className="text-gray-600 font-medium">Countries</div>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">24/7</div>
-              <div className="text-gray-600 font-medium">Global Support</div>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">98%</div>
-              <div className="text-gray-600 font-medium">Employee Satisfaction</div>
-            </div>
-          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">AK</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Ankit Kumar</h3>
+                <p className="text-blue-600 font-medium mb-3">CEO & Co-Founder</p>
+                <p className="text-gray-600 text-sm">
+                  Former McKinsey consultant with 15+ years in fintech and insurance. Led digital transformation
+                  initiatives at major insurers.
+                </p>
+              </CardContent>
+            </Card>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {teamValues.map((value, index) => (
-              <div
-                key={index}
-                className="bg-slate-50 border-l-4 border-l-emerald-500 p-6 rounded-r-xl hover:shadow-lg transition-all duration-300"
-              >
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">RS</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rahul Sharma</h3>
+                <p className="text-blue-600 font-medium mb-3">CTO & Co-Founder</p>
+                <p className="text-gray-600 text-sm">
+                  Ex-Google engineer with expertise in scalable systems. Built technology platforms serving millions of
+                  users globally.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">PM</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Priya Mehta</h3>
+                <p className="text-blue-600 font-medium mb-3">VP of Business Development</p>
+                <p className="text-gray-600 text-sm">
+                  Insurance industry veteran with 20+ years experience. Former executive at leading insurance companies
+                  across Asia.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Awards & Recognition */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Awards & Recognition</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Industry recognition for our innovation and impact
+            </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-slate-300 hidden md:block"></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2">InsurTech Innovation Award</h3>
+              <p className="text-sm text-gray-600">2024 - Asia InsurTech Summit</p>
+            </div>
 
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } flex-col md:gap-8`}
-                >
-                  <div className="w-full md:w-5/12">
-                    <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-all duration-300">
-                      <CardContent className="p-6">
-                        <h4 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h4>
-                        <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
+            <div className="text-center p-6 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2">Best API Platform</h3>
+              <p className="text-sm text-gray-600">2023 - FinTech Awards India</p>
+            </div>
 
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-4 md:my-0 relative z-10">
-                    {item.year}
-                  </div>
+            <div className="text-center p-6 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2">Startup of the Year</h3>
+              <p className="text-sm text-gray-600">2023 - TechCrunch Disrupt</p>
+            </div>
 
-                  <div className="w-full md:w-5/12"></div>
-                </div>
-              ))}
+            <div className="text-center p-6 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2">Digital Excellence</h3>
+              <p className="text-sm text-gray-600">2022 - Insurance Innovation Awards</p>
             </div>
           </div>
         </div>
@@ -392,24 +322,26 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Join Our Mission</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Partner With Us?</h2>
           <p className="text-xl mb-10 opacity-90">
-            Be part of the team transforming insurance technology for businesses worldwide
+            Join our mission to transform the insurance industry through technology and innovation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
-            >
-              View Open Positions
-            </Button>
             <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-white text-blue-900 hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
+              >
+                Partner With Us
+              </Button>
+            </Link>
+            <Link href="/demo">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm text-lg px-8 py-4 bg-transparent"
               >
-                Partner With Us
+                Schedule Demo
               </Button>
             </Link>
           </div>
