@@ -19,51 +19,6 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const insuranceLogos = [
-    {
-      src: "/images/acko-logo.png",
-      alt: "Acko Insurance",
-      width: 120,
-      height: 40,
-    },
-    {
-      src: "/images/icici-lombard-logo.png",
-      alt: "ICICI Lombard General Insurance",
-      width: 140,
-      height: 40,
-    },
-    {
-      src: "/images/hdfc-life-logo.png",
-      alt: "HDFC Life Insurance",
-      width: 130,
-      height: 40,
-    },
-    {
-      src: "/images/sbi-logo.png",
-      alt: "SBI Life Insurance",
-      width: 100,
-      height: 40,
-    },
-    {
-      src: "/images/bajaj-allianz-logo.png",
-      alt: "Bajaj Allianz General Insurance",
-      width: 140,
-      height: 40,
-    },
-    {
-      src: "/images/digit-logo.png",
-      alt: "Digit Insurance",
-      width: 110,
-      height: 40,
-    },
-    {
-      src: "/images/hdfc-ergo-logo.png",
-      alt: "HDFC ERGO General Insurance",
-      width: 150,
-      height: 40,
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -290,37 +245,48 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-12">
+          <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-8">
             Trusted by India's Leading Insurance Companies
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
+            {/* Acko Logo */}
+            <div className="flex justify-center items-center p-4 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1">
+              <Image
+                src="/images/acko-logo.png"
+                alt="Acko Insurance"
+                width={120}
+                height={40}
+                className="h-8 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
 
-          {/* Logo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center mb-12">
-            {insuranceLogos.map((logo, index) => (
+            {/* ICICI Lombard Logo */}
+            <div className="flex justify-center items-center p-4 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1">
+              <Image
+                src="/images/icici-lombard-logo.png"
+                alt="ICICI Lombard General Insurance"
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+
+            {/* Text-based partners for remaining slots */}
+            {["HDFC ERGO", "Bajaj Allianz", "TATA AIG", "+ 175 Partners"].map((partner, index) => (
               <div
                 key={index}
-                className="flex justify-center items-center p-4 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1 group"
+                className="p-4 rounded-lg hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1"
               >
-                <Image
-                  src={logo.src || "/placeholder.svg"}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                />
+                <div className="font-semibold text-gray-600 text-sm">{partner}</div>
               </div>
             ))}
           </div>
-
-          {/* Additional Partners Text */}
-          <div className="text-center mb-8">
+          <div className="mt-8 text-center">
             <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-full px-6 py-3">
               <Globe className="w-5 h-5 mr-2 text-blue-600" />
-              <span className="text-blue-700 font-semibold">
-                + 170 More Partners | Expanding into Southeast Asia, Middle East & Africa
-              </span>
+              <span className="text-blue-700 font-semibold">Expanding into Southeast Asia, Middle East & Africa</span>
             </div>
           </div>
         </div>
