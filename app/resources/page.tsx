@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ResourcesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -136,9 +137,14 @@ export default function ResourcesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-900 relative">
-                Ensuredit
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
             {/* Desktop Navigation */}
@@ -368,10 +374,13 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold relative">
-                  Ensuredit
-                  <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400">
                 Professional insurance technology platform for teams and businesses worldwide.

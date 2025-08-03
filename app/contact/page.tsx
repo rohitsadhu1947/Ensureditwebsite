@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Menu, X, MapPin, Phone, Mail, Clock, Send, CheckCircle, Building2, Globe } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -96,9 +97,14 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-900 relative">
-                Ensuredit
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
 
@@ -454,37 +460,37 @@ export default function ContactPage() {
         </div>
       </section>
 
-   {/* Map Section */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Our headquarters is conveniently located in Gurugram
-      </p>
-    </div>
+      {/* Map Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our headquarters is conveniently located in Gurugram
+            </p>
+          </div>
 
-    <div className="aspect-[16/9] w-full bg-slate-200 rounded-xl overflow-hidden">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.1368219422557!2d77.08578187534077!3d28.41512809392038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23f2bba534e1%3A0x81f39979d47cba90!2sEnsuredit!5e0!3m2!1sen!2sin!4v1754203517902!5m2!1sen!2sin"
-        className="w-full h-full border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
+          <div className="aspect-[16/9] w-full bg-slate-200 rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.1368219422557!2d77.08578187534077!3d28.41512809392038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23f2bba534e1%3A0x81f39979d47cba90!2sEnsuredit!5e0!3m2!1sen!2sin!4v1754203517902!5m2!1sen!2sin"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-    <div className="text-center mt-6">
-      <a
-        href="https://www.google.com/maps?q=Ensuredit,+Tower+B,+503,+Pioneer+Urban+Square,+Sector+62,+Gurugram,+Haryana,+122018,+India"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button className="mt-4 bg-blue-600">Open in Google Maps</Button>
-      </a>
-    </div>
-  </div>
-</section>
+          <div className="text-center mt-6">
+            <a
+              href="https://www.google.com/maps?q=Ensuredit,+Tower+B,+503,+Pioneer+Urban+Square,+Sector+62,+Gurugram,+Haryana,+122018,+India"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="mt-4 bg-blue-600">Open in Google Maps</Button>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-slate-50">
@@ -568,10 +574,13 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold relative">
-                  Ensuredit
-                  <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400">
                 Professional insurance technology platform for teams and businesses worldwide.

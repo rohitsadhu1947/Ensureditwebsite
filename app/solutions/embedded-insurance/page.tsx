@@ -19,6 +19,7 @@ import {
   Briefcase,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function EmbeddedInsurancePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,8 +37,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: CreditCard,
       title: "Fintech & Banking",
-      description:
-        "Boost customer lifetime value with embedded financial protection.",
+      description: "Boost customer lifetime value with embedded financial protection.",
       benefits: [
         "Credit card protection insurance",
         "Credit shield/Loan protection insurance",
@@ -48,8 +48,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: ShoppingCart,
       title: "E-commerce & Retail",
-      description:
-        "Turn checkout into a profit center with instant product protection.",
+      description: "Turn checkout into a profit center with instant product protection.",
       benefits: [
         "Product warranty extensions",
         "Shipping protection insurance",
@@ -60,8 +59,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: Plane,
       title: "Travel & Mobility",
-      description:
-        "Embed protection. Secure journeys. Increase revenue.",
+      description: "Embed protection. Secure journeys. Increase revenue.",
       benefits: [
         "Trip cancellation protection",
         "Ride-sharing insurance coverage",
@@ -72,8 +70,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: Home,
       title: "Real Estate & PropTech",
-      description:
-        "Make every property transaction a protected, profitable experience.",
+      description: "Make every property transaction a protected, profitable experience.",
       benefits: [
         "Home buyer protection insurance",
         "Tenant security deposit alternatives",
@@ -84,8 +81,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: Car,
       title: "Automotive & Fleet",
-      description:
-        "Complete vehicle protection built into your automotive platform.",
+      description: "Complete vehicle protection built into your automotive platform.",
       benefits: [
         "Extended vehicle warranties",
         "Gap insurance coverage",
@@ -96,8 +92,7 @@ export default function EmbeddedInsurancePage() {
     {
       icon: Briefcase,
       title: "B2B & Enterprise",
-      description:
-        "Complete business protection built into your enterprise platform.",
+      description: "Complete business protection built into your enterprise platform.",
       benefits: [
         "Professional liability insurance",
         "Cybersecurity protection",
@@ -120,9 +115,14 @@ export default function EmbeddedInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-900 relative">
-                Ensuredit
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
 
@@ -456,10 +456,13 @@ export default function EmbeddedInsurancePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold relative">
-                  Ensuredit
-                  <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400">
                 Professional insurance technology platform for teams and businesses worldwide.

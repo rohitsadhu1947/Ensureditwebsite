@@ -1,6 +1,5 @@
 "use client"
 
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -25,12 +24,11 @@ import {
   RotateCcw,
 } from "lucide-react"
 import Link from "next/link"
-
+import Image from "next/image"
 
 export default function RetailDistributionPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +37,6 @@ export default function RetailDistributionPage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
 
   const features = [
     {
@@ -105,7 +102,6 @@ export default function RetailDistributionPage() {
     },
   ]
 
-
   const productCategories = [
     {
       icon: Car,
@@ -145,7 +141,6 @@ export default function RetailDistributionPage() {
     },
   ]
 
-
   const processSteps = [
     {
       number: "1",
@@ -177,7 +172,6 @@ export default function RetailDistributionPage() {
     },
   ]
 
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -191,12 +185,16 @@ export default function RetailDistributionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-900 relative">
-                Ensuredit
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
-
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -231,7 +229,6 @@ export default function RetailDistributionPage() {
               </Link>
             </nav>
 
-
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/demo"
@@ -244,7 +241,6 @@ export default function RetailDistributionPage() {
               </Button>
             </div>
 
-
             {/* Mobile menu button */}
             <button
               className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
@@ -253,7 +249,6 @@ export default function RetailDistributionPage() {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
@@ -286,7 +281,6 @@ export default function RetailDistributionPage() {
         </div>
       </header>
 
-
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-r from-emerald-500 to-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -297,7 +291,6 @@ export default function RetailDistributionPage() {
             Complete digital platform to scale customer acquisition with access to 70+ insurers and 250+ products across
             Motor, Health, Life and specialized coverage
           </p>
-
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="text-center">
@@ -320,7 +313,6 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* Features Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -330,7 +322,6 @@ export default function RetailDistributionPage() {
               Everything you need to run a successful insurance distribution business in one integrated platform
             </p>
           </div>
-
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -359,7 +350,6 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* Products Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -371,7 +361,6 @@ export default function RetailDistributionPage() {
               Access largest catalog of insurance products from 70+ leading insurers globally
             </p>
           </div>
-
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {productCategories.map((category, index) => (
@@ -393,7 +382,6 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* Process Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -401,7 +389,6 @@ export default function RetailDistributionPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How Our Platform Works</h2>
             <p className="text-xl text-gray-600">Simple, streamlined process from lead to policy</p>
           </div>
-
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
@@ -425,7 +412,6 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -440,7 +426,6 @@ export default function RetailDistributionPage() {
                   cutting-edge technology to help you scale your business efficiently.
                 </p>
               </div>
-
 
               <div className="space-y-6">
                 {[
@@ -477,7 +462,6 @@ export default function RetailDistributionPage() {
                 ))}
               </div>
 
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
                   <Button
@@ -497,7 +481,6 @@ export default function RetailDistributionPage() {
               </div>
             </div>
 
-
             <div className="bg-slate-100 rounded-2xl p-8">
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
@@ -509,7 +492,6 @@ export default function RetailDistributionPage() {
                     <div className="text-sm text-gray-500">Real-time Performance</div>
                   </div>
                 </div>
-
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
@@ -529,7 +511,6 @@ export default function RetailDistributionPage() {
                     <div className="text-xs text-gray-600 font-medium">Customer Satisfaction</div>
                   </div>
                 </div>
-
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
@@ -560,7 +541,6 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -590,17 +570,19 @@ export default function RetailDistributionPage() {
         </div>
       </section>
 
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold relative">
-                  Ensuredit
-                  <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400">
                 Professional insurance technology platform for teams and businesses worldwide.

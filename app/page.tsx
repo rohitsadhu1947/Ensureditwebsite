@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Menu, X, ArrowRight, CheckCircle, Cloud, Plug, Target, Settings, Zap, Globe, TrendingUp } from "lucide-react"
+import { Menu, X, ArrowRight, CheckCircle, Globe, Shield, Zap, TrendingUp, Users, Database, Plug } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -32,9 +32,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-900 relative">
-                Ensuredit
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/ensuredit-logo-full.png"
+                  alt="Ensuredit"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
 
@@ -42,35 +47,35 @@ export default function HomePage() {
             <nav className="hidden md:flex items-center space-x-8">
               <Link href="/" className="text-blue-600 font-medium transition-colors relative group">
                 Platform
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-5 h-0.5 bg-emerald-500 transition-all duration-300"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-300"></div>
               </Link>
               <Link
                 href="/solutions"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
               >
                 Solutions
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-emerald-500 group-hover:w-5 transition-all duration-300"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 group-hover:w-5 transition-all duration-300"></div>
               </Link>
               <Link
                 href="/about"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
               >
                 About Us
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-emerald-500 group-hover:w-5 transition-all duration-300"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 group-hover:w-5 transition-all duration-300"></div>
               </Link>
               <Link
                 href="/resources"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
               >
                 Resources
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-emerald-500 group-hover:w-5 transition-all duration-300"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 group-hover:w-5 transition-all duration-300"></div>
               </Link>
               <Link
                 href="/contact"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
               >
                 Contact
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-emerald-500 group-hover:w-5 transition-all duration-300"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 group-hover:w-5 transition-all duration-300"></div>
               </Link>
             </nav>
 
@@ -81,7 +86,7 @@ export default function HomePage() {
               >
                 Schedule Demo
               </Link>
-              <Button className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+              <Button className="bg-gradient-to-r from-blue-900 via-blue-700 to-teal-600 hover:from-blue-800 hover:via-blue-600 hover:to-teal-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                 Get Started
               </Button>
             </div>
@@ -118,7 +123,9 @@ export default function HomePage() {
                   <Link href="/demo" className="block text-blue-600 py-2 font-medium">
                     Schedule Demo
                   </Link>
-                  <Button className="w-full bg-gradient-to-r from-blue-900 to-blue-600">Get Started</Button>
+                  <Button className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-teal-600">
+                    Get Started
+                  </Button>
                 </div>
               </nav>
             </div>
@@ -128,19 +135,19 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-blue-500/8 to-transparent rounded-full"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-teal-500/8 to-transparent rounded-full"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 rounded-full px-4 py-2 text-sm font-semibold text-emerald-700">
-                  <TrendingUp className="w-4 h-4 mr-2 text-emerald-600" />
+                <div className="inline-flex items-center bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-full px-4 py-2 text-sm font-semibold text-teal-700">
+                  <TrendingUp className="w-4 h-4 mr-2 text-teal-600" />
                   Processing $400M+ Annually | Expanding to 15+ Global Markets
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   The Global Infrastructure for{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 bg-clip-text text-transparent">
                     Next-Generation Insurance
                   </span>
                 </h1>
@@ -152,19 +159,19 @@ export default function HomePage() {
 
               <div className="flex flex-wrap gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
                   <span className="text-gray-600 font-medium">Enterprise-Grade Architecture</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
                   <span className="text-gray-600 font-medium">Multi-Market Compliance</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
                   <span className="text-gray-600 font-medium">99.99% Platform Reliability</span>
@@ -175,7 +182,7 @@ export default function HomePage() {
                 <Link href="/demo">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
+                    className="bg-gradient-to-r from-blue-900 via-blue-700 to-teal-600 hover:from-blue-800 hover:via-blue-600 hover:to-teal-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-4"
                   >
                     Schedule Enterprise Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -184,7 +191,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-lg px-8 py-4 bg-transparent"
+                    className="border-2 border-slate-300 hover:border-teal-500 hover:bg-teal-50 text-lg px-8 py-4 bg-transparent"
                   >
                     Explore Global Platform
                   </Button>
@@ -211,8 +218,14 @@ export default function HomePage() {
               <Card className="w-full max-w-md shadow-2xl border-0 bg-white">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-lg flex items-center justify-center text-white font-bold">
-                      E
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 rounded-lg flex items-center justify-center">
+                      <Image
+                        src="/images/ensuredit-logo.png"
+                        alt="Ensuredit"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Global Expansion Hub</div>
@@ -221,19 +234,19 @@ export default function HomePage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">$33M</div>
+                      <div className="text-2xl font-bold text-teal-500 mb-1">$33M</div>
                       <div className="text-xs text-gray-600 font-medium">Monthly GWP</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">330K</div>
+                      <div className="text-2xl font-bold text-teal-500 mb-1">330K</div>
                       <div className="text-xs text-gray-600 font-medium">Monthly Policies</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">180+</div>
+                      <div className="text-2xl font-bold text-teal-500 mb-1">180+</div>
                       <div className="text-xs text-gray-600 font-medium">Global Partners</div>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-500 mb-1">99.99%</div>
+                      <div className="text-2xl font-bold text-teal-500 mb-1">99.99%</div>
                       <div className="text-xs text-gray-600 font-medium">Platform Uptime</div>
                     </div>
                   </div>
@@ -248,7 +261,7 @@ export default function HomePage() {
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-sm text-gray-500 uppercase tracking-wider font-medium mb-8">
-            Trusted by Leading Global Brands 
+            Trusted by Leading Global Brands
           </div>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
             {/* Acko Logo */}
@@ -284,9 +297,9 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-full px-6 py-3">
-              <Globe className="w-5 h-5 mr-2 text-blue-600" />
-              <span className="text-blue-700 font-semibold">Expanding into Southeast Asia, Middle East & Africa</span>
+            <div className="inline-flex items-center bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-full px-6 py-3">
+              <Globe className="w-5 h-5 mr-2 text-teal-600" />
+              <span className="text-teal-700 font-semibold">Expanding into Southeast Asia, Middle East & Africa</span>
             </div>
           </div>
         </div>
@@ -307,14 +320,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Embedded Insurance */}
             <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
-                  🔗
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                  <Plug className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Embedded Insurance Platform</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  API-first infrastructure enabling instant insurance integration across any digital touchpoint. 
+                  API-first infrastructure enabling instant insurance integration across any digital touchpoint.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -324,7 +337,7 @@ export default function HomePage() {
                     "Enterprise-grade security & performance",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -340,10 +353,10 @@ export default function HomePage() {
 
             {/* Retail Insurance */}
             <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
-                  🏪
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Distribution Network</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -359,7 +372,7 @@ export default function HomePage() {
                     "Real-time settlement & reporting",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -375,10 +388,10 @@ export default function HomePage() {
 
             {/* Strategic Analytics */}
             <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl flex items-center justify-center text-2xl mb-6">
-                  📊
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                  <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Strategic Analytics Engine</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -394,7 +407,7 @@ export default function HomePage() {
                     "Market expansion planning tools",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-gray-600">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -424,41 +437,42 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
             {[
               {
-                icon: Cloud,
-                title: "Multi-Cloud",
-                description: "Global deployment across AWS, Azure with automatic failover and 99.99% uptime",
-              },
-              {
-                icon: Plug,
-                title: "Universal APIs",
-                description: "Single integration supporting unlimited markets with localized compliance",
-              },
-              {
                 icon: Globe,
-                title: "Global Ready",
-                description: "Multi-currency, multi-language, multi-regulatory compliance out of the box",
-              },
-              {
-                icon: Settings,
-                title: "Auto-Scaling",
-                description: "Infrastructure that grows automatically with your global expansion",
-              },
-              {
-                icon: Target,
-                title: "Enterprise SLA",
-                description: "Mission-critical reliability with 24/7 global support and monitoring",
+                title: "Global Infrastructure",
+                description:
+                  "Multi-region deployment with localized compliance across emerging and established markets",
               },
               {
                 icon: Zap,
-                title: "Real-time",
-                description: "Instant processing and settlement across all time zones and markets",
+                title: "Lightning Fast APIs",
+                description: "Sub-second response times with 99.99% uptime for mission-critical operations",
+              },
+              {
+                icon: Shield,
+                title: "Enterprise Security",
+                description: "Bank-grade security with SOC2, ISO27001 compliance and end-to-end encryption",
+              },
+              {
+                icon: TrendingUp,
+                title: "Auto-Scaling Platform",
+                description: "Elastic infrastructure that automatically scales with your business growth",
+              },
+              {
+                icon: Users,
+                title: "24/7 Global Support",
+                description: "Round-the-clock expert support across all time zones and markets",
+              },
+              {
+                icon: Database,
+                title: "Real-time Processing",
+                description: "Instant quote generation, policy binding, and settlement across all markets",
               },
             ].map((feature, index) => (
               <div
                 key={index}
                 className="text-center group hover:bg-slate-50 p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-slate-200"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-slate-100 to-white border-2 border-slate-200 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-emerald-500 group-hover:border-transparent transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-slate-100 to-white border-2 border-slate-200 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-blue-500 group-hover:to-teal-400 group-hover:border-transparent transition-all duration-300">
                   <feature.icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -470,7 +484,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-700 to-teal-600 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-radial from-white/10 to-transparent rounded-full"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Scale Globally?</h2>
@@ -505,10 +519,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold relative">
-                  Ensuredit
-                  <div className="absolute -bottom-1 left-0 w-8 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/ensuredit-logo-full-white-text.png"
+                  alt="Ensuredit"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400">
                 The global infrastructure powering next-generation insurance technology for rapid market expansion.
