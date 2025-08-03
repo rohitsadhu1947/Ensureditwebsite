@@ -454,29 +454,37 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our headquarters is conveniently located in Mumbai
-            </p>
-          </div>
+   {/* Map Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Our headquarters is conveniently located in Gurugram
+      </p>
+    </div>
 
-          <div className="aspect-[16/9] w-full bg-slate-200 rounded-xl overflow-hidden">
-            {/* This would typically be an iframe with Google Maps or similar */}
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <p className="text-lg font-medium text-gray-900">Ensuredit Headquarters</p>
-                <p className="text-gray-600">Mumbai, Maharashtra, India</p>
-                <Button className="mt-4 bg-blue-600">Open in Google Maps</Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="aspect-[16/9] w-full bg-slate-200 rounded-xl overflow-hidden">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.1368219422557!2d77.08578187534077!3d28.41512809392038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23f2bba534e1%3A0x81f39979d47cba90!2sEnsuredit!5e0!3m2!1sen!2sin!4v1754203517902!5m2!1sen!2sin"
+        className="w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div className="text-center mt-6">
+      <a
+        href="https://www.google.com/maps?q=Ensuredit,+Tower+B,+503,+Pioneer+Urban+Square,+Sector+62,+Gurugram,+Haryana,+122018,+India"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button className="mt-4 bg-blue-600">Open in Google Maps</Button>
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-slate-50">
