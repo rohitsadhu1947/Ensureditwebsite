@@ -215,39 +215,70 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <Card className="w-full max-w-md shadow-2xl border-0 bg-white">
+              <Card className="w-full max-w-md shadow-2xl border-0 bg-white relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-400 rounded-lg flex items-center justify-center">
-                      <Image
-                        src="/images/ensuredit-logo.png"
-                        alt="Ensuredit"
-                        width={24}
-                        height={24}
-                        className="w-6 h-6"
-                      />
+                      <Plug className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Global Expansion Hub</div>
-                      <div className="text-sm text-gray-500">Real-time Growth Metrics</div>
+                      <div className="font-semibold text-gray-900">Insurance API Platform</div>
+                      <div className="text-sm text-gray-500">Live Integration Status</div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-teal-500 mb-1">$33M</div>
-                      <div className="text-xs text-gray-600 font-medium">Monthly GWP</div>
+
+                  {/* API Status Indicators */}
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-medium text-gray-700">Quote API</span>
+                      </div>
+                      <span className="text-green-600 font-bold text-sm">Active</span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-teal-500 mb-1">330K</div>
-                      <div className="text-xs text-gray-600 font-medium">Monthly Policies</div>
+
+                    <div className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-medium text-gray-700">Policy Bind</span>
+                      </div>
+                      <span className="text-blue-600 font-bold text-sm">Processing</span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-teal-500 mb-1">180+</div>
-                      <div className="text-xs text-gray-600 font-medium">Global Partners</div>
+
+                    <div className="flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-medium text-gray-700">Claims API</span>
+                      </div>
+                      <span className="text-purple-600 font-bold text-sm">Live</span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                      <div className="text-2xl font-bold text-teal-500 mb-1">99.99%</div>
-                      <div className="text-xs text-gray-600 font-medium">Platform Uptime</div>
+                  </div>
+
+                  {/* Real-time Metrics */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-slate-50 p-3 rounded-lg text-center border border-slate-200">
+                      <div className="text-lg font-bold text-teal-500 mb-1">847ms</div>
+                      <div className="text-xs text-gray-600 font-medium">Avg Response</div>
+                    </div>
+                    <div className="bg-slate-50 p-3 rounded-lg text-center border border-slate-200">
+                      <div className="text-lg font-bold text-teal-500 mb-1">15.2K</div>
+                      <div className="text-xs text-gray-600 font-medium">Daily Calls</div>
+                    </div>
+                  </div>
+
+                  {/* Global Coverage Indicator */}
+                  <div className="mt-6 pt-4 border-t border-slate-200">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-gray-600">Global Coverage</span>
+                      <span className="text-sm font-semibold text-gray-900">5 Markets</span>
+                    </div>
+                    <div className="flex gap-1">
+                      {["🇮🇳", "🇸🇬", "🇦🇪", "🇿🇦", "🇲🇽"].map((flag, index) => (
+                        <div key={index} className="text-lg opacity-80 hover:opacity-100 transition-opacity">
+                          {flag}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </CardContent>
